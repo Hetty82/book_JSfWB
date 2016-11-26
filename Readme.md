@@ -3,4 +3,5 @@
 Exercises and practising while going through the book.
 
 ## Development
+
 LiveReload for reloading and sass compilation
