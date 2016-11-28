@@ -1,16 +1,28 @@
-console.log('test');
+// Conventions
+// ----------------------------------
 
-var $output1 = document.querySelector('[data-output="1"]');
-var $output2 = document.querySelector('[data-output="2"]');
-var $output3 = document.querySelector ('[data-output="3"]');
-
-console.log($output1);
-
-var content1 = "This is the letter sigma: \u03a3";
-var content2 = "The length of that string is " + content1.length + " characters.";
-var content3 = "The ParseFloat result of 1234blue is: " + parseFloat('1234blue');
+/*
+ * Variable prefixes
+ * $ for DOM-element(s) -> string or single object
+ * a for array, o for object, s for string, f for function, i for integer
+ */
 
 
-$output1.textContent = content1;
-$output2.textContent = content2;
-$output3.textContent = content3;
+// Functions
+// ---------
+
+// Append a div for each object
+var fAppendDivs    = function (current_value, index) {
+  var $el          = document.createElement('div');
+  var sContent     = 'Output ';
+  sContent        += index + 1;
+  sContent        += ' - ';
+  if (current_value.comment) {
+    sContent      += current_value.comment;
+    sContent      += ': ';
+  }
+  sContent        += current_value.text;
+  $el.textContent  = sContent;
+  $el.setAttribute("class", "output-item js-output-item");
+  $parentEl.appendChild($el);
+}
