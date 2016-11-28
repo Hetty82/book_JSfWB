@@ -1,13 +1,15 @@
-# Compiled source #
-#------------------
-
-*.css
-
+# ignore distribution output
+# --------------------------
+dist
 
 
-# Packages #
-#-----------
+# ignore node dependencies
+# ------------------------
+node_modules
 
+
+# Packages
+# --------
 *.7z
 *.dmg
 *.gz
@@ -18,18 +20,14 @@
 *.zip
 
 
-
-# Sublime Text Project files #
-#-----------------------------
-
+# Sublime Text Project files
+# --------------------------
 *.sublime-project
 *.sublime-workspace
 
 
-
-# OS generated files #
-#---------------------
-
+# OS generated files
+# ------------------
 .DS_Store
 .DS_Store?
 ._*

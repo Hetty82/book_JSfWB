@@ -1,0 +1,28 @@
+{
+  "name": "book-js-for-web-developers",
+  "version": "1.0.0",
+  "description": "Exercises and practising while going through the book.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hetty82/book_JSfWB.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Hetty82/book_JSfWB/issues"
+  },
+  "homepage": "https://github.com/Hetty82/book_JSfWB#readme",
+  "devDependencies": {
+    "browserify": "^13.1.1",
+    "gulp": "^3.9.1",
+    "gulp-if": "^2.0.2",
+    "gulp-pug": "^3.1.0",
+    "gulp-streamify": "^1.0.2",
+    "gulp-uglify": "^2.0.0",
+    "vinyl-source-stream": "^1.1.0"
+  }
+}
