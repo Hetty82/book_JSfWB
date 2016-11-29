@@ -1,6 +1,7 @@
 const gulp          = require('gulp'),
       gutil         = require('gulp-util'),
       gulpif        = require('gulp-if'),
+      browserSync   = require('browser-sync').create(),
 
       pug           = require('gulp-pug'),
 
@@ -21,12 +22,16 @@ let outputDir       = './dist'
 // TASKS
 // -----
 
-// create a default task and just log a message
-gulp.task('default', function() {
-  return gutil.log('Gulp is running!')
+// Init BrowserSync
+gulp.task('browserSync', function() {
+  browserSync.init({
+    server: {
+      baseDir: '.'
+    },
+  })
 });
 
-// create html
+// Build html
 gulp.task('html', function() {
   return gulp.src('src/templates/**/*.pug')
     .pipe(pug({
@@ -35,7 +40,7 @@ gulp.task('html', function() {
     .pipe(gulp.dest('./'));
 });
 
-// process scripts
+// Build scripts
 gulp.task('scripts', function () {
   return browserify('./src/scripts/main', { debug: env === 'development' })
     .bundle()
@@ -44,7 +49,7 @@ gulp.task('scripts', function () {
     .pipe(gulp.dest(outputDir));
 });
 
-// process styles
+// Build styles
 gulp.task('styles', function() {
   let config = {};
 
@@ -59,15 +64,17 @@ gulp.task('styles', function() {
   return gulp.src('src/styles/app.sass')
     .pipe(sass(config))
     .pipe(gulp.dest(outputDir))
+    .pipe(browserSync.reload({
+      stream: true
+    }));
 });
 
-// watch
-gulp.task('watch', function() {
-  gulp.watch('src/templates/**/*.pug', ['pug']);
-  gulp.watch('src/scripts/**/*.js', ['scripts']);
-  gulp.watch('src/styles/**/*.sass', ['styles']);
+// Watch
+gulp.task('watch', ['browserSync'], function() {
+  gulp.watch('src/templates/**/*.pug', [ 'html', browserSync.reload ]);
+  gulp.watch('src/scripts/**/*.js', [ 'scripts', browserSync.reload ]);
+  gulp.watch('src/styles/**/*.sass', [ 'styles', browserSync.reload ]);
 });
 
-// default
+// Default
 gulp.task('default', ['scripts', 'styles', 'html', 'watch']);
-

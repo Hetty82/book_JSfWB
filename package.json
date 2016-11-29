@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Hetty82/book_JSfWB#readme",
   "devDependencies": {
+    "browser-sync": "^2.18.2",
     "browserify": "^13.1.1",
     "gulp": "^3.9.1",
     "gulp-if": "^2.0.2",
