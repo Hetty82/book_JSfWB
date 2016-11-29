@@ -60,3 +60,14 @@ gulp.task('styles', function() {
     .pipe(sass(config))
     .pipe(gulp.dest(outputDir))
 });
+
+// watch
+gulp.task('watch', function() {
+  gulp.watch('src/templates/**/*.pug', ['pug']);
+  gulp.watch('src/scripts/**/*.js', ['scripts']);
+  gulp.watch('src/styles/**/*.sass', ['styles']);
+});
+
+// default
+gulp.task('default', ['scripts', 'styles', 'html', 'watch']);
+
