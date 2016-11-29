@@ -1,17 +1,8 @@
 // var section01       = require('./section01.js');
 // var section02       = require('./section02.js');
 
-// Conventions
-// ----------------------------------
-
-/*
- * Variable prefixes
- * $ for DOM-element(s) -> string or single object
- * a for array, o for object, s for string, f for function, i for integer
- */
-
 // Append a div for each object
-var fAppendDivs    = function (current_value, index) {
+var appendDivs    = function (current_value, index) {
   var $el          = document.createElement('div');
   var sContent     = 'Output ';
   sContent        += index + 1;
@@ -30,23 +21,23 @@ var fAppendDivs    = function (current_value, index) {
 // ----------------------------------
 
 // Start with empty array for objects
-var aObjects = []
+var objects = []
 
 // Parent Section Element
 var $parentEl = document.querySelector('.js-output-section-01');
 
 // Section data
-var sStringWithSigma = "This is the letter sigma: \u03a3";
+var stringWithSigma = "This is the letter sigma: \u03a3";
 
 // Example output objects
-aObjects = [
+objects = [
   {
     comment: 'A string with a unicode character in hex ( \\u03a3 )',
-    text: '"' + sStringWithSigma + '"'
+    text: '"' + stringWithSigma + '"'
   },
   {
     // comment: '',
-    text: "The length of that string is " + sStringWithSigma.length + " characters."
+    text: "The length of that string is " + stringWithSigma.length + " characters."
   },
   {
     // comment: '',
@@ -55,60 +46,60 @@ aObjects = [
 ]
 
 // Create and append divs
-aObjects.forEach(fAppendDivs);
+objects.forEach(appendDivs);
 
 
 // Section 2 String conversion
 // ---------------------------
 
 // Start with empty list for objects
-var aObjects = []
+var objects = []
 
 // Parent Section Element
 var $parentEl = document.querySelector('.js-output-section-02');
 
 // Section data
-var oDog = {
+var dog = {
   species: 'Dog',
   breed: 'Boxer',
   name: 'Jack'
 }
 
-var iNum = 24;
-var $iNum = document.querySelector('#iNum');
-$iNum.textContent = iNum;
+var num = 24;
+var $num = document.querySelector('#num');
+$num.textContent = num;
 
 // Example output objects
-aObjects = [
+objects = [
   {
-    comment: 'Default (decimal), iNum.toString()',
-    text: iNum.toString()
+    comment: 'Default (decimal), num.toString()',
+    text: num.toString()
   },
   {
-    comment: 'Binary, iNum.toString(2)',
-    text: iNum.toString(2)
+    comment: 'Binary, num.toString(2)',
+    text: num.toString(2)
   },
   {
-    comment: 'Octal, iNum.toString(8)',
-    text: iNum.toString(8)
+    comment: 'Octal, num.toString(8)',
+    text: num.toString(8)
   },
   {
-    comment: 'Decimal, iNum.toString(10)',
-    text: iNum.toString(10)
+    comment: 'Decimal, num.toString(10)',
+    text: num.toString(10)
   },
   {
-    comment: 'Hexadecimal, iNum.toString(16)',
-    text: iNum.toString(16)
+    comment: 'Hexadecimal, num.toString(16)',
+    text: num.toString(16)
   },
   {
-    comment: 'oDog.toString()',
-    text: oDog.toString()
+    comment: 'dog.toString()',
+    text: dog.toString()
   },
   {
-    comment: 'JSON.stringify(oDog)',
-    text: JSON.stringify(oDog)
+    comment: 'JSON.stringify(dog)',
+    text: JSON.stringify(dog)
   },
 ]
 
 // Create and append divs
-aObjects.forEach(fAppendDivs);
+objects.forEach(appendDivs);

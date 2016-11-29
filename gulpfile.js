@@ -26,7 +26,7 @@ let outputDir       = './dist'
 gulp.task('browserSync', function() {
   browserSync.init({
     server: {
-      baseDir: '.'
+      baseDir: 'dist'
     },
   })
 });
@@ -37,7 +37,7 @@ gulp.task('html', function() {
     .pipe(pug({
       pretty: true
     }))
-    .pipe(gulp.dest('./'));
+    .pipe(gulp.dest(outputDir));
 });
 
 // Build scripts
