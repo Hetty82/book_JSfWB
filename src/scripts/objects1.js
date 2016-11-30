@@ -16,5 +16,9 @@ module.exports = [
   {
     // comment: '',
     text: "The ParseFloat result of ' 01234blue' is: " + parseFloat(' 01234blue')
-  }
+  },
+  // {
+  //   comment: '',
+  //   text: ''
+  // },
 ];

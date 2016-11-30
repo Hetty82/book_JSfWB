@@ -28,6 +28,7 @@ gulp.task('browserSync', function() {
     server: {
       baseDir: 'dist'
     },
+    open: false
   })
 });
 
