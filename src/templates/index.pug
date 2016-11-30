@@ -38,5 +38,17 @@ html
           h4 Objects and their base properties
           pre var o = new Object();
 
+        section.output-section.js-output-section-04
+          h4 Operators
+          pre
+            | var s1 = "2";
+            | var s2 = "hallo";
+            | var b = false;
+            | var f = 1.1;
+            | var o = {
+            |   valueOf: function() {
+            |     return -1;
+            |   }
+            | }
 
     script(src="bundle.js")

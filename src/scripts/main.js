@@ -4,6 +4,7 @@ var appendElements         = require('./appendElements.js');
 var objects1               = require('./objects1.js');
 var objects2               = require('./objects2.js');
 var objects3               = require('./objects3.js');
+var objects4               = require('./objects4.js');
 
 var parentEl;
 var divs;
@@ -36,3 +37,8 @@ parentEl = document.querySelector('.js-output-section-03');
 divs = createDivArray(objects3);
 appendElements(divs, parentEl);
 
+// Section 4 Objects
+// -----------------
+parentEl = document.querySelector('.js-output-section-04');
+divs = createDivArray(objects4);
+appendElements(divs, parentEl);
